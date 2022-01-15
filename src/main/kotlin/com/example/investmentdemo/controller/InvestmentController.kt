@@ -1,6 +1,6 @@
 package com.example.investmentdemo.controller
 
-import com.example.investmentdemo.model.DataResponse
+import com.example.investmentdemo.model.response.BaseResponse
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 class InvestmentController {
 
     @GetMapping(value = ["health"])
-    fun health(): DataResponse<Boolean> = DataResponse(
+    fun health(): BaseResponse<Boolean> = BaseResponse(
             code = HttpStatus.OK.value(),
             status = HttpStatus.OK.reasonPhrase,
             data = true
