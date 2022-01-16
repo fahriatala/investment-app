@@ -3,7 +3,7 @@ package com.example.investmentdemo.controller
 import com.example.investmentdemo.model.request.UserDataRequest
 import com.example.investmentdemo.model.response.BaseResponse
 import com.example.investmentdemo.model.response.UserDataResponse
-import com.example.investmentdemo.service.UserService
+import com.example.investmentdemo.service.user.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType

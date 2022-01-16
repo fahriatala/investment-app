@@ -1,11 +1,8 @@
 package com.example.investmentdemo.repository
 
-import com.example.investmentdemo.entity.UserData
+import com.example.investmentdemo.entity.NabHistory
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface UserDataRepository : JpaRepository<UserData, Long> {
-
-    fun existsByUsername(username: String): Boolean
-}
+interface NabHistoryRepository : JpaRepository<NabHistory, Long>

@@ -17,5 +17,4 @@ class InvestmentController {
             status = HttpStatus.OK.reasonPhrase,
             data = true
     )
-
 }

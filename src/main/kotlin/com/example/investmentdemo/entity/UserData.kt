@@ -16,7 +16,7 @@ data class UserData(
     val id: Long? = null,
 
     @Column(name = "user_name")
-    val userName: String? = null,
+    val username: String? = null,
 
     @Column(name = "name")
     val name: String? = null
