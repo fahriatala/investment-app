@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface NabHistoryRepository : JpaRepository<NabHistory, Long>
+interface NabHistoryRepository : JpaRepository<NabHistory, Long> {
+    fun findTopByOrderByIdDesc(): NabHistory?
+}

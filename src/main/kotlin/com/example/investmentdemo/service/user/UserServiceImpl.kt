@@ -2,7 +2,6 @@ package com.example.investmentdemo.service.user
 
 import com.example.investmentdemo.entity.UserData
 import com.example.investmentdemo.model.request.UserDataRequest
-import com.example.investmentdemo.model.response.UserDataResponse
 import com.example.investmentdemo.repository.UserDataRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -13,7 +12,7 @@ class UserServiceImpl @Autowired constructor(
         private val userDataRepository: UserDataRepository
 ) : UserService {
 
-    override fun addUser(request: UserDataRequest): UserDataResponse {
+    override fun addUser(request: UserDataRequest): Map<String, Long?> {
         validateCreateUser(request)
         val userData = userDataRepository.saveAndFlush(
                 UserData(
@@ -22,7 +21,7 @@ class UserServiceImpl @Autowired constructor(
                 )
         )
 
-        return UserDataResponse(userData.id, userData.name)
+        return mapOf("id" to userData.id)
     }
 
     fun validateCreateUser(request: UserDataRequest) {

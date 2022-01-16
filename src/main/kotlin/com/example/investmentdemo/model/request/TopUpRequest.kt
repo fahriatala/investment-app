@@ -7,5 +7,5 @@ data class TopUpRequest(
         val userId: Long? = null,
 
         @JsonProperty("amount_rupiah")
-        val amountRupiah: Double? = null
+        val amountInRupiah: Double? = null
 )

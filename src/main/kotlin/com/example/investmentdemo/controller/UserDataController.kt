@@ -2,7 +2,6 @@ package com.example.investmentdemo.controller
 
 import com.example.investmentdemo.model.request.UserDataRequest
 import com.example.investmentdemo.model.response.BaseResponse
-import com.example.investmentdemo.model.response.UserDataResponse
 import com.example.investmentdemo.service.user.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -14,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
 
 @RestController
-@RequestMapping(value = ["/user"], produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping(value = ["/v1/user"], produces = [MediaType.APPLICATION_JSON_VALUE])
 class UserDataController @Autowired constructor(
         private val userService: UserService
 ) {
 
-    @PostMapping
+    @PostMapping(value = ["add"])
     fun addUser(@RequestBody @Valid request: UserDataRequest): BaseResponse<Any> {
         val result = userService.addUser(request)
         return BaseResponse(
