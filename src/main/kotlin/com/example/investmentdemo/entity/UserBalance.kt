@@ -13,15 +13,14 @@ data class UserBalance(
         @Id
         @Column(name = "id")
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @JsonIgnore
         val id: Long? = null,
 
         @Column(name = "user_id")
-        val userId: Long? = null,
+        var userId: Long? = null,
 
         @Column(name = "total_unit")
-        val totalUnit: Double? = null,
+        var totalUnit: Double? = null,
 
         @Column(name = "total_amount")
-        val totalAmount: Double? = null
+        var totalAmount: Double? = null
 )

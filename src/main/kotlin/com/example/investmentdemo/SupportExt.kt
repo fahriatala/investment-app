@@ -29,6 +29,7 @@ fun Double?.toCurrencyFormat(): String {
         monetaryDecimalSeparator = ','
         groupingSeparator = '.'
     }
+
     val rupiahFormat = (DecimalFormat.getCurrencyInstance() as DecimalFormat).apply {
         decimalFormatSymbols = formatSymbol
     }

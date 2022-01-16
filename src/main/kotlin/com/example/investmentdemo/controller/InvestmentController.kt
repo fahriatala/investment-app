@@ -1,5 +1,6 @@
 package com.example.investmentdemo.controller
 
+import com.example.investmentdemo.model.request.MemberListRequest
 import com.example.investmentdemo.model.request.TopUpRequest
 import com.example.investmentdemo.model.request.UpdateNabRequest
 import com.example.investmentdemo.model.request.WithdrawRequest
@@ -10,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
-import javax.validation.Valid
 
 @RestController
 @RequestMapping(value = ["/v1/ib"], produces = [MediaType.APPLICATION_JSON_VALUE])
@@ -55,6 +55,24 @@ class InvestmentController @Autowired constructor(
         return BaseResponse(
                 code = HttpStatus.CREATED.value(),
                 status = HttpStatus.CREATED.reasonPhrase,
+                data = result
+        )
+    }
+
+    @GetMapping(value = ["member"])
+    fun getMemberList(
+            @RequestParam(value = "page", required = false, defaultValue = "1")
+            page: Int = 1,
+            @RequestParam(value = "size", required = false, defaultValue = "5")
+            size: Int = 5,
+            @RequestParam(value = "userId", required = false)
+            userId: Long?
+    ): BaseResponse<Any> {
+        val request = MemberListRequest(userId, page, size)
+        val result = investmentService.getMemberList(request)
+        return BaseResponse(
+                code = HttpStatus.OK.value(),
+                status = HttpStatus.OK.reasonPhrase,
                 data = result
         )
     }

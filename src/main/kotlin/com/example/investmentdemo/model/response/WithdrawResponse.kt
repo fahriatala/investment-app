@@ -10,5 +10,5 @@ data class WithdrawResponse(
         val totalUnit: Double,
 
         @JsonProperty("saldo_rupiah_total")
-        val amount: Double
+        val amount: String
 )
