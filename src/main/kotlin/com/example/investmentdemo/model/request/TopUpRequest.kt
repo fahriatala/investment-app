@@ -1,0 +1,11 @@
+package com.example.investmentdemo.model.request
+
+import com.fasterxml.jackson.annotation.JsonProperty
+
+data class TopUpRequest(
+        @JsonProperty("user_id")
+        val userId: Long? = null,
+
+        @JsonProperty("amount_rupiah")
+        val amountRupiah: Double? = null
+)

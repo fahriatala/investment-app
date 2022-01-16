@@ -8,19 +8,23 @@ import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "user_data")
+@Table(name = "topup_list")
 @DynamicInsert
 @DynamicUpdate
-data class UserData(
+data class TopUpList(
         @Id
         @Column(name = "id")
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id: Long? = null,
 
-        @Column(name = "user_name")
-        val username: String? = null,
-         @Column(name = "name")
-        val name: String? = null,
+        @Column(name = "user_id")
+        val userId: Long? = null,
+
+        @Column(name = "total_unit")
+        val totalUnit: Double? = null,
+
+        @Column(name = "total_amount")
+        val totalAmount: Double? = null,
 
         @Column(name = "created_at")
         @CreationTimestamp
