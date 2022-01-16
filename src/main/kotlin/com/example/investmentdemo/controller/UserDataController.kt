@@ -20,7 +20,7 @@ class UserDataController @Autowired constructor(
 ) {
 
     @PostMapping
-    fun addUser(@RequestBody @Valid request: UserDataRequest): BaseResponse<UserDataResponse> {
+    fun addUser(@RequestBody @Valid request: UserDataRequest): BaseResponse<Any> {
         val result = userService.addUser(request)
         return BaseResponse(
                 code = HttpStatus.CREATED.value(),
