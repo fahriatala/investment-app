@@ -6,6 +6,7 @@
 
 |   Name           |    Details                |
 |------------------|---------------------------|
+|   Builder        |    Maven                  |
 |   IDE            |    Intellij IDE           |
 |   Java Version   |    Java 8                 |
 |   Language       |    Kotlin                 |
