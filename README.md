@@ -6,10 +6,10 @@
 
 |   Name           |    Details                |
 |------------------|---------------------------|
-|   Builder        |    Maven                  |
+|   Builder        |    Maven 3.6.2            |
 |   IDE            |    Intellij IDE           |
 |   Java Version   |    Java 8                 |
-|   Language       |    Kotlin                 |
+|   Language       |    Kotlin 1.3.41          |
 |   Framework      |    Spring Boot            |
 |   Database       |    MySQL                  |
 
