@@ -45,7 +45,7 @@ class InvestmentServiceImpl @Autowired constructor(
         val currentUnit = userBalance.totalUnit ?: 0.0
         val currentAmount = userBalance.totalAmount ?: 0.0
 
-        val assetValue = nabHistoryRepository.findTopByOrderByIdDesc()?.nabAmount ?: 0.0
+        val assetValue = nabHistoryRepository.findTopByOrderByIdDesc()?.nabAmount ?: 1.0
         val unit = (amountInRupiah / assetValue).roundOffDecimal()
 
         val totalUnit = currentUnit.plus(unit)
