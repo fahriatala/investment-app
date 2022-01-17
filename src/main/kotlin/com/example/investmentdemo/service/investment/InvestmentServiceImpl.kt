@@ -94,7 +94,7 @@ class InvestmentServiceImpl @Autowired constructor(
             throw RuntimeException("request amount bigger than current amount")
         }
 
-        val assetValue = nabHistoryRepository.findTopByOrderByIdDesc()?.nabAmount ?: 0.0
+        val assetValue = nabHistoryRepository.findTopByOrderByIdDesc()?.nabAmount ?: 1.0
         val unit = (amountInRupiah / assetValue).roundOffDecimal()
 
         val totalUnit = currentUnit.minus(unit)
